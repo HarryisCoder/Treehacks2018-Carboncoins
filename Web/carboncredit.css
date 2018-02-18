@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Century Gothic;
+}
+
+section {
+	width: 100vw;
+	height: 100vh;
+}
+
+a {
+	text-decoration: none;
+}
+	a: hover {
+		background-color: white;
+		color: #414042;
+	}
+
+#welcome_section {
+	background-color: #55b676;
+}
+
+#bg {
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+
+#logo {
+	position: fixed;
+	width: 50px;
+	top: 65px;
+	left: 65px;
+}
+
+#welcome {
+	font-size: 60px;
+	color: white;
+	text-align: center;
+	padding-top: 120px;
+}
+
+.button {
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	border: 3px solid white;
+	border-radius: 50px;
+	width: 170px;
+	padding: 8px;
+}
+.button:hover {
+	background-color: white;
+	color: #414042;
+}
+
+#button_admin {
+	margin-top: 70px;
+	margin-left: 540px;
+}
+
+#button_user {
+	height: 36px;
+	margin-top: 25px;
+	margin-left: 540px;
+	padding-top: 18px;
+}
+
+#intro_section {
+	background-color: #55b676;
+}
+
+#who {
+	font-size: 50px;
+	text-align: center;
+	padding-top: 100px;
+	color: white;
+}
+
+#intro_paragraph {
+	color: white;
+	font-size: 22px;
+	margin: 120px;
+	margin-left: 356px;
+	margin-right: 356px;
+	text-align: center;
+}
+
+#car {
+	position: absolute;
+	z-index: 100;
+	top: 1120px;
+	right: 30px;
+	width: 300px;
+}
+
+#contact_section {
+	background-color: #55b676;
+}
+
+#email {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 150px
+}

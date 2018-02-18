@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Carbon Coins - Administrator</title>
+	<link rel="stylesheet" type="text/css" href="administrative.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="jQuerySimpleCounter.js"></script>
+</head>
+<body>
+	<section id="heading">
+		<a href="carboncredit.html"><img src="logo.png" id="logo"></a>
+		<h2>Data Center</h2>
+	</section>
+
+	<section id="gif_section">
+		<img src="mlpics/00.png" id="trained_img">
+	</section>
+
+	<section id="numbers_section">
+		<div style="font-weight: bold; color: ">
+			<div class="changing_nums">2018 Annual Goal: 1800 MMmt CO2</div>
+		</div>
+		<br>
+
+		<div style="font-weight: bold; color: ">
+			Total Carbon Emission: 
+			<div class="changing_nums" id="count-test"></div><span style="color: gray; font-size: 12px;">MMmt</span>
+		</div>
+		<br>
+
+		<div style="font-weight: bold; color: ">
+			Remained Carbon Emission: 
+			<div class="changing_nums" id="count-test-2"></div><span style="color: gray; font-size: 12px;">MMmt</span>
+		</div>
+		<br>
+
+		<div style="font-weight: bold; color: ">
+			Predicted Carbon Emission for The Next Month: 
+			<div class="changing_nums" id="count-test-3"></div><span style="color: gray; font-size: 12px;">MMmt</span>
+		</div>
+		<br>
+
+		<div style="font-size: 12px; color: gray;">* MMmt = million metric tons</div>
+
+		<div id="important" style="font-weight: bold; color: ">
+			Suggested Carbon Coin Supply for The Next Month: 
+			<div class="changing_nums" id="count-test-4"></div><span style="color: lightgray; font-size: 12px;">Coins</span>
+		</div>
+
+	</section>
+
+	<script>
+		// Image GIF
+		var i = 0;
+
+		$('#trained_img').click(function() {
+		    i = i+1;
+		    if (i == 10){
+		    	i=0;
+		    }
+		    $('#trained_img').attr("src", "mlpics/0" + i + ".png");
+		});
+
+		var emission = [100,250,300,400,600,800,900,1300,1400,1500];
+		var prediction = [50, 200, 400, 300, 300, 200, 50, 50, 200, 250];
+		var suggest = [60,220,340,300,250,250,60,60,200,200];
+
+		setInterval(function() {
+		    i = i+1;
+		    if (i == 10){
+		    	i=0;
+		    }
+		    $('#trained_img').attr("src", "mlpics/0" + i + ".png");
+
+			// $('#count-test').jQuerySimpleCounter({
+			// 	end: emission[i],
+			// 	duration: 4000
+			// });
+			$('#count-test').html(emission[i]);
+
+			$('#count-test-2').html(1800 - emission[i]);
+
+			$('#count-test-3').html(prediction[i]);
+
+			// $('#count-test-2').jQuerySimpleCounter({
+			// 	end: 1800 - emission[i],
+			// 	duration: 4000
+			// });
+
+			// $('#count-test-3').jQuerySimpleCounter({
+			// 	end: prediction[i],
+			// 	duration: 4000
+			// });
+
+			$('#count-test-4').jQuerySimpleCounter({
+				end: suggest[i],
+				duration: 500
+			});
+		}, 2000);
+
+
+
+		// Number changes
+
+		
+	</script>
+</body>
+</html>

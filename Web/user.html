@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Carbon Coins - My Wallet</title>
+	<link rel="stylesheet" type="text/css" href="user.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<section id="heading">
+		<a href="carboncredit.html"><img src="logo.png" id="logo"></a>
+		<p style="float: left; color: white; margin-left: 780px; margin-top: 30px;">My Profile</p>
+		<p style="float: left; color: white; margin-left: 30px; margin-top: 30px;">Statement</p>
+		<p style="float: left; color: white; margin-left: 30px; margin-top: 30px;">Settings</p>
+		<p style="float: left; color: white; margin-left: 30px; margin-top: 30px;">Help</p>
+		<p style="float: left; color: white; margin-left: 30px; margin-top: 30px;">Log Out</p>
+	</section>
+
+	<section id="wallet_section">
+		<h1 id="my_wallet">My Carbon Wallet</h1>
+		<img id="wallet" src="wallet.png">
+		<p id="balance">Credit: <span id="co2"></span> carbon coins</p>
+	</section>
+
+	<section id="transaction_section">
+		<h1 id="transaction_heading">Transaction</h1>
+		<div class="button" style="margin-left: 140px;">Transfer</div>
+		<div class="button" style="margin-left: 90px;">Request</div>
+
+		<div>
+			<ul id="transaction_history">
+				<li><span id="timestamp"></span>  Transaction: <span id="transaction_num"></span></li>
+			</ul>
+		</div>
+	</section>
+
+	<script>
+		var pre_x = 0;
+	    setInterval(function() {
+
+	    	
+
+	        jQuery.getJSON("https://api.particle.io/v1/devices/450048000851363136363935/price?access_token=25930b5e5a02b87ce9f02205df1d26d6f60f9c61", function(res) {
+	        	// var x =0;
+	        	// var pre_x = x;
+	        	var x = res.result;
+	            $("#co2").html(res.result);
+	            console.log(x);
+	            console.log(pre_x);
+	            // var y =x -pre_x;
+	            // var d = new Date();
+	            // 	var timestamp = d.toString();
+	            // 	$("#transaction_history").append('<li><span> ' + timestamp + ': You comsume ' + (x - pre_x) + ' coins </span></li>');
+	            if (x != pre_x) {
+	            	// addtra();
+	            	var d = new Date();
+	            	var timestamp = d.toString();
+	            	$("#transaction_history").append('<li><span> ' + timestamp + ': You consume ' + (x - pre_x) + ' coins </span></li>');
+	            	// var start = Date.now();
+	            	// document.querySelector("#timestamp").innerHTML = start;
+	            	// document.querySelector("#transaction_num").innerHTML = x - pre_x;
+	            	pre_x = x;
+	            }
+
+	        });
+
+	    	
+
+	    }, 3000);
+
+
+	    
+	    
+	</script>
+</body>
+</html>

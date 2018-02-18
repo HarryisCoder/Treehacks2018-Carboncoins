@@ -1,0 +1,75 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-family: Helvetica;
+	margin: 100px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#logo {
+    position: fixed;
+    width: 50px;
+    top: 65px;
+    left: 65px;
+}
+
+body {
+    background-color: #55b676;
+    color: white;
+}
+
+form {
+	font-family: Helvetica;
+	font-size: 15px;
+	margin-top: 50px;
+    text-align: center;
+}
+
+input, select {
+    width: 20%;
+    font-size: 12px;
+    padding: 8px 8px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 18px;
+}
+
+.button {
+	border-radius: 50px;
+	border: 2px solid white;
+	background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Helvetica;
+    padding: 15px;
+    width: 130px;
+    color: white;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    margin-left: 360px;
+    position: absolute;
+    left: 200px;
+    top: 350px;
+}
+.button a{
+ 	color: white;
+	text-decoration: none;
+}
+
+.button:hover {
+	background: white;
+    color: #55b676;
+	cursor: pointer;
+}
+.button:visited {
+	color: white;
+}
